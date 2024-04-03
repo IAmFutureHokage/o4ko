@@ -65,4 +65,5 @@ func (p *Player) DrawCardFromHand() card.Card {
 
 func (p *Player) ResetScore() {
 	p.score = 0
+	p.aces = 0
 }

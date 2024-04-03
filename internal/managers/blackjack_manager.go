@@ -96,6 +96,10 @@ func (bm *BlackjackManager) PlayerHits() {
 			fmt.Println("\nВы получили карту:")
 			fmt.Println(card.ToString())
 			bm.Player.AddCard(card)
+			if bm.Player.Score() > 21 {
+				fmt.Println("\nПеребор!")
+				return
+			}
 		case "stand":
 			return
 		default:

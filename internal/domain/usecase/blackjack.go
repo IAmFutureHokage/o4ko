@@ -24,7 +24,7 @@ func (gm *BlackjackGame) Run() {
 	gm.bjmanager.InitGame()
 
 	for {
-		gm.bjmanager.ShuffleCards(100000)
+		gm.bjmanager.ShuffleCards(1000000)
 		gm.bjmanager.DealCardsToDealer()
 		gm.bjmanager.DealCardsToPlayer()
 		gm.bjmanager.PlayerHits()

@@ -30,6 +30,11 @@ func (d *Dealer) AddCard(c card.Card) {
 	}
 }
 
+func (d *Dealer) ResetScore() {
+	d.Player.ResetScore()
+	d.closedCard = nil
+}
+
 func (d *Dealer) OpenClosedCard() card.Card {
 	if d.closedCard == nil {
 		panic("closed card not found")
