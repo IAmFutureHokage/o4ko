@@ -1,6 +1,7 @@
 package dealer
 
 import (
+	"fmt"
 	"twentyoneo4ko/internal/domain/player"
 	"twentyoneo4ko/pkg/card"
 )
@@ -25,9 +26,8 @@ func NewDealer(deck StackInterface[card.Card]) *Dealer {
 func (d *Dealer) AddCard(c card.Card) {
 	if d.closedCard == nil {
 		d.closedCard = &c
-	} else {
-		d.Player.AddCard(c)
 	}
+	d.Player.AddCard(c)
 }
 
 func (d *Dealer) ResetScore() {
@@ -45,5 +45,7 @@ func (d *Dealer) OpenClosedCard() card.Card {
 }
 
 func (d *Dealer) ShouldTakeCard() bool {
-	return d.Score() < 17
+	fmt.Println(d.Score())
+	response := d.Score() < 17
+	return response
 }
